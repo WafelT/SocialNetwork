@@ -1,0 +1,5 @@
+.main-content {
+    grid-area: content;
+    
+    margin-right: 20px;
+  }
