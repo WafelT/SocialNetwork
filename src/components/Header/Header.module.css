@@ -23,6 +23,10 @@
   
     position: relative;
   }
+
+  .logo__name {
+    font-size: 40px;
+  }
   
   .logo__lines:nth-child(1) {
     margin-right: 11px;

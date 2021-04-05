@@ -1,5 +1,6 @@
 .app-wrapper {
   display: grid; 
+  height: 100vh;
 
   grid-template-areas: 
   "header header"

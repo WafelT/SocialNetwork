@@ -2,7 +2,9 @@
   grid-area: nav;
   padding: 40px 64px 40px 40px;
   
-  height: calc(100vh - 140px);
+  min-height: 100vh;
+  max-height: 100vh;
+  height: 100%;
   background-color: var(--mainColor);
 
   position: relative;
@@ -40,7 +42,7 @@
 
 .item a:hover {
   border-radius: 5px;
-  background-color: #79BDEB;
+  background-color: var(--mainHover);
 }
 
 .item a svg {
@@ -61,7 +63,7 @@
 
 .lines span {
   width: 266px;
-  height: 2px;
+  height: 2.5px;
   background-color: var(--white);  
 }
 

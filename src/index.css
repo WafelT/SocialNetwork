@@ -7,6 +7,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button:focus, input:focus {
+  outline: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,9 +20,14 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
+h1 {
+  font-size: 40px;
+}
+
 /* Variables */
 :root {
   --mainColor: #5DADE2;
+  --mainHover: #79BDEB;
   --white: #fff;
   --black: #000;
 }
