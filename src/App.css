@@ -1,6 +1,5 @@
 .app-wrapper {
-  display: grid; 
-  height: 100vh;
+  display: grid;
 
   grid-template-areas: 
   "header header"
@@ -9,4 +8,9 @@
   grid-template-rows: 134px 1fr;
   grid-template-columns: 370px 10fr;
   grid-gap: 20px;
+}
+
+.main__content {
+  grid-area: content;
+  margin-right: 20px;
 }

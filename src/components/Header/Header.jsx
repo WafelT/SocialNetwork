@@ -10,7 +10,7 @@ const Header = () => {
                         <span></span>
                         <span></span>
                     </div>
-                    <h1 className={styles.logo__name}>The Connection</h1>
+                    <h1 className={styles.logo__name}>Connection</h1>
                     <div className={styles.logo__lines}>
                         <span></span>
                         <span></span>
