@@ -4,11 +4,12 @@ import Dialogs from './Dialogs/Dialogs';
 import UserDialogs from './UsersDialogs/UserDialogs';
 
 
-const Messages = () => {
+const Messages = (props) => {
+
     return(
         <div className={styles.messages}>
-            <UserDialogs />
-            <Dialogs />
+            <UserDialogs usersData={props.usersData} />
+            <Dialogs dialogsData={props.dialogsData} />
         </div>
     );
 }

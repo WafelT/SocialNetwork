@@ -9,19 +9,21 @@ import Messages from './components/Messages/Messages';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
+import postData from '.';
 
-const App = () => {
+const App = (props) => {
+
     return (
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header />
                 <Nav />
                 <div className="main__content">
-                    <Route path="/messages" component={Messages}/>
-                    <Route path="/profile" component={Profile}/>
-                    <Route path="/news" component={News}/>
-                    <Route path="/music" component={Music}/>
-                    <Route path="/settings" component={Settings}/>
+                    <Route path="/messages" render={ () => <Messages dialogsData={props.dialogsData} usersData={props.usersData} />} />
+                    <Route path="/profile" render={ () => <Profile postData={props.postData} /> } />
+                    <Route path="/news" component={ () => <News /> } />
+                    <Route path="/music" component={ () => <Music /> } />
+                    <Route path="/settings" component={ () => <Settings /> } />
                 </div>
             </div>
         </BrowserRouter>

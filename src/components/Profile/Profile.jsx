@@ -4,12 +4,12 @@ import HeaderImage from './HeaderImage/HeaderImage';
 import MyPosts from './MyPosts/MyPosts';
 import styles from './Profile.module.css';
 
-const Profile = () => {
+const Profile = (props) => {
     return(
         <div>
             <HeaderImage />
             <AboutUser />
-            <MyPosts />
+            <MyPosts postData={props.postData} />
         </div>
     );
 }
