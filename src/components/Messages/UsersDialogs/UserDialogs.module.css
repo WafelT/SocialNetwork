@@ -12,6 +12,11 @@
     width: 280px;
 }
 
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
 .user {
     display: flex;
     align-items: center;

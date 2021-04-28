@@ -7,11 +7,11 @@ const MyPosts = (props) => {
 
     let postDataWrapper = props.postData.map((postData) => {
         return <Post message={postData.message} date={postData.date}/>
-    })
+    });
 
     return(
         <div className={styles.wrapper}>
-            <WritePost />
+            <WritePost addPost={props.addPost} changeInputPostText={props.changeInputPostText} inputPostText={props.inputPostText} />
             <div className={styles.posts__wrapper}>
                 {postDataWrapper}
             </div>

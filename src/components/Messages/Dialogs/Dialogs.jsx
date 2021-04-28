@@ -1,27 +1,19 @@
 import React from 'react';
 import styles from './Dialogs.module.css';
-
-const Dialog = (props) => {
-    return(
-        <div className={styles.item}>
-            <img className={styles.user__image} src={props.avatar} alt="image__avatar"/>
-            <p className={styles.message}>
-                {props.message}
-            </p>
-        </div>
-    )
-}
+import DialogItem from './DialogsItem/DialogsItem';
+import WriteMessage from './WriteMessage/WriteMessage';
 
 const Dialogs = (props) => {
 
     // mapping the BLL
     let dialogsDataWrapper = props.dialogsData.map((userData) => {
-        return <Dialog message={userData.message} avatar={userData.avatar}/>
+        return <DialogItem message={userData.message} avatar={userData.avatar}/>
     });
 
-    return(
+    return (
         <div className={styles.wrapper}>
             {dialogsDataWrapper}
+            <WriteMessage addMessage={props.addMessage} />
         </div>
     )
 }

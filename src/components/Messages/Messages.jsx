@@ -8,8 +8,8 @@ const Messages = (props) => {
 
     return(
         <div className={styles.messages}>
-            <UserDialogs usersData={props.usersData} />
-            <Dialogs dialogsData={props.dialogsData} />
+            <UserDialogs usersData={props.messagesPage.usersData} />
+            <Dialogs dialogsData={props.messagesPage.dialogsData} addMessage={props.addMessage} />
         </div>
     );
 }
