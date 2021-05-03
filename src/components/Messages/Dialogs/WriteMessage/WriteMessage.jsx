@@ -5,11 +5,14 @@ const WriteMessage = (props) => {
     let newMessageItem = React.createRef();
 
     let takeMessageData = () => {
-        let message = newMessageItem.current.value;
-        props.addMessage(message);
+        props.addMessage();
         newMessageItem.current.value = '';
-    }
+    };
 
+    let onMessageChange = () => {
+        let text = newMessageItem.current.value;
+        props.changeInputMessageText(text);
+    }
 
     return (
         <form className={styles.wrapper}>
@@ -17,7 +20,8 @@ const WriteMessage = (props) => {
                 type="text" 
                 ref={newMessageItem}
                 className={styles.write__message}
-                placeholder="Message..." 
+                placeholder="Message..."
+                onChange={onMessageChange}
                 onFocus={(e) => e.target.placeholder = ""}
                 onBlur={(e) => e.target.placeholder = "Message..."}
             />

@@ -11,14 +11,14 @@ import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 
 const App = (props) => {
-
+    
     return (
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header />
                 <Nav />
                 <div className="main__content">
-                    <Route path="/messages" render={ () => <Messages messagesPage={props.state.messagesPage} addMessage={props.addMessage} /> } />
+                    <Route path="/messages" render={ () => <Messages messagesPage={props.state.messagesPage} addMessage={props.addMessage} changeInputMessageText={props.changeInputMessageText} /> } />
                     <Route path="/profile" render={ () => <Profile profilePage={props.state.profilePage} addPost={props.addPost} changeInputPostText={props.changeInputPostText} /> } />
                     <Route path="/news" component={ () => <News /> } />
                     <Route path="/music" component={ () => <Music /> } />

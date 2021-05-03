@@ -9,7 +9,7 @@ const Messages = (props) => {
     return(
         <div className={styles.messages}>
             <UserDialogs usersData={props.messagesPage.usersData} />
-            <Dialogs dialogsData={props.messagesPage.dialogsData} addMessage={props.addMessage} />
+            <Dialogs dialogsData={props.messagesPage.dialogsData} changeInputMessageText={props.changeInputMessageText} addMessage={props.addMessage} />
         </div>
     );
 }

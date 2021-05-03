@@ -6,7 +6,6 @@ const WritePost = (props) => {
     let newPostItem = React.createRef();
 
     let takePostData = () => {
-        let text = newPostItem.current.value;
         props.addPost();
         newPostItem.current.value = '';
     }
