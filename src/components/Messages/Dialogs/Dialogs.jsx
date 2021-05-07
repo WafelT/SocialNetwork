@@ -13,7 +13,7 @@ const Dialogs = (props) => {
     return (
         <div className={styles.wrapper}>
             {dialogsDataWrapper}
-            <WriteMessage addMessage={props.addMessage} changeInputMessageText={props.changeInputMessageText} />
+            <WriteMessage dispatch={props.dispatch} />
         </div>
     )
 }

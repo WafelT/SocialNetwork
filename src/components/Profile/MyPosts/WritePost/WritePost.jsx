@@ -1,18 +1,18 @@
 import React from 'react';
-import { addPost } from '../../../../redux/state';
+import { addPostActionCreator, changeInputPostTextActionCreator, } from '../../../../redux/profileReducer';
 import styles from './WritePost.module.css';
 
 const WritePost = (props) => {
     let newPostItem = React.createRef();
 
     let takePostData = () => {
-        props.addPost();
+        props.dispatch(addPostActionCreator());
         newPostItem.current.value = '';
     }
 
     let onPostChange = () => {
         let text = newPostItem.current.value;
-        props.changeInputPostText(text);
+        props.dispatch(changeInputPostTextActionCreator(text));
     }
 
     return(

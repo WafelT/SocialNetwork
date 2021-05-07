@@ -11,7 +11,7 @@ const MyPosts = (props) => {
 
     return(
         <div className={styles.wrapper}>
-            <WritePost addPost={props.addPost} changeInputPostText={props.changeInputPostText} />
+            <WritePost dispatch={props.dispatch} />
             <div className={styles.posts__wrapper}>
                 {postDataWrapper}
             </div>

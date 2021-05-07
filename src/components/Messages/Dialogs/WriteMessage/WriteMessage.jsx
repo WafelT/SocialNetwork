@@ -1,17 +1,18 @@
 import React from 'react';
+import { addMessageActionCreator, changeInputMessageTextActionCreator } from '../../../../redux/messagesReducer';
 import styles from './WriteMessage.module.css';
 
 const WriteMessage = (props) => {
     let newMessageItem = React.createRef();
 
     let takeMessageData = () => {
-        props.addMessage();
+        props.dispatch(addMessageActionCreator());
         newMessageItem.current.value = '';
     };
 
     let onMessageChange = () => {
         let text = newMessageItem.current.value;
-        props.changeInputMessageText(text);
+        props.dispatch(changeInputMessageTextActionCreator(text));
     }
 
     return (

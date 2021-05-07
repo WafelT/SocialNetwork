@@ -1,3 +1,12 @@
+import messagesReducer from "./messagesReducer";
+import profileReducer from "./profileReducer";
+import sidebarReducer from "./sidebarReducer";
+
+const ADD_POST = 'ADD-POST';
+const ADD_MESSAGE = 'ADD-MESSAGE';
+const CHANGE_INPUT_POST_TEXT = 'CHANGE-INPUT-POST-TEXT';
+const CHANGE_INPUT_MESSAGE_TEXT = 'CHANGE-INPUT-MESSAGE-TEXT';
+
 export let store = {
 
     _state : {
@@ -54,6 +63,10 @@ export let store = {
 
             inputMessagesText : '',
         },
+
+        sidebar : {
+
+        }
     },
 
     getState() {
@@ -64,34 +77,11 @@ export let store = {
         console.log('Something gets wrong with state.js');
     },
     
-    addMessage() {
-        let newMessage = {
-            id : 5,
-            message : this._state.messagesPage.inputMessagesText,
-            avatar  : 'https://www.setaswall.com/wp-content/uploads/2017/05/Minimal-Phone-Wallpaper-010-1080x2340-945x2048.jpg',
-        }
-    
-        this._state.messagesPage.dialogsData.push(newMessage);
-        this._callSubscriber(this._state);
-    },
-    
-    addPost() {
-        let newPost = {
-            message : this._state.profilePage.inputPostText, 
-            date : "15.03.2021",
-        }
-    
-        this._state.profilePage.postData.push(newPost);
-        this._callSubscriber(this._state);
-    },
-    
-    changeInputPostText(symbol) {
-        this._state.profilePage.inputPostText = symbol;
-        this._callSubscriber(this._state);
-    },
-
-    changeInputMessageText(symbol) {
-        this._state.messagesPage.inputMessagesText = symbol;
+    dispatch(action) {
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.messagesPage = messagesReducer(this._state.messagesPage, action);
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+        
         this._callSubscriber(this._state);
     },
     
