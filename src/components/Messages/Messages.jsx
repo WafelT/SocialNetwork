@@ -1,15 +1,15 @@
 import React from 'react';
 import styles from './Messages.module.css';
-import Dialogs from './Dialogs/Dialogs';
-import UserDialogs from './UsersDialogs/UserDialogs';
+import DialogsContainer from './Dialogs/DialogsContainer';
+import UserDialogsContainer from './UsersDialogs/UsersDialogsContainer';
 
 
-const Messages = (props) => {
+const Messages = () => {
 
     return(
         <div className={styles.messages}>
-            <UserDialogs usersData={props.messagesPage.usersData} />
-            <Dialogs dialogsData={props.messagesPage.dialogsData} dispatch={props.dispatch} />
+            <UserDialogsContainer />
+            <DialogsContainer />
         </div>
     );
 }

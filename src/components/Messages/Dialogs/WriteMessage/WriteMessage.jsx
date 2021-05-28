@@ -1,18 +1,18 @@
 import React from 'react';
-import { addMessageActionCreator, changeInputMessageTextActionCreator } from '../../../../redux/messagesReducer';
 import styles from './WriteMessage.module.css';
 
 const WriteMessage = (props) => {
     let newMessageItem = React.createRef();
 
-    let takeMessageData = () => {
-        props.dispatch(addMessageActionCreator());
+    let onAddMessage = () => {
+        if (newMessageItem.current.value === '') return;
+        props.takeMessageData();
         newMessageItem.current.value = '';
     };
 
     let onMessageChange = () => {
         let text = newMessageItem.current.value;
-        props.dispatch(changeInputMessageTextActionCreator(text));
+        props.changeInputMessageText(text);
     }
 
     return (
@@ -26,7 +26,7 @@ const WriteMessage = (props) => {
                 onFocus={(e) => e.target.placeholder = ""}
                 onBlur={(e) => e.target.placeholder = "Message..."}
             />
-            <button className={styles.button} onClick={ takeMessageData } type="button">Send</button>
+            <button className={styles.button} onClick={ onAddMessage } type="button">Send</button>
         </form>
     );
 }

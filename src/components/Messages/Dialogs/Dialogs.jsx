@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './Dialogs.module.css';
 import DialogItem from './DialogsItem/DialogsItem';
-import WriteMessage from './WriteMessage/WriteMessage';
+import WriteMessageContainer from './WriteMessage/WriteMessageContainer';
 
 const Dialogs = (props) => {
 
+    debugger
     // mapping the BLL
     let dialogsDataWrapper = props.dialogsData.map((userData) => {
         return <DialogItem message={userData.message} avatar={userData.avatar}/>
@@ -13,7 +14,7 @@ const Dialogs = (props) => {
     return (
         <div className={styles.wrapper}>
             {dialogsDataWrapper}
-            <WriteMessage dispatch={props.dispatch} />
+            <WriteMessageContainer store={props.store} />
         </div>
     )
 }
